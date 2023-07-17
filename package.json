@@ -1,0 +1,36 @@
+{
+	"name": "@swissspidy/wp-i18n-benchmarks",
+	"private": true,
+	"description": "Benchmarks comparing various WordPress i18n performance enhancements",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/swissspidy/wp-i18n-benchmarks"
+	},
+	"author": "swissspidy",
+	"license": "GPL-2.0-or-later",
+	"bugs": {
+		"url": "https://github.com/swissspidy/wp-i18n-benchmarks/issues"
+	},
+	"homepage": "https://github.com/swissspidy/wp-i18n-benchmarks#readme",
+	"type": "module",
+	"devDependencies": {
+		"@playwright/test": "^1.35.1",
+		"@wordpress/e2e-test-utils-playwright": "^0.5.0",
+		"@wordpress/env": "^8.2.0",
+		"@wordpress/scripts": "^26.6.0",
+		"eslint-plugin-playwright": "^0.15.2",
+		"get-port": "^7.0.0",
+		"glob": "^10.3.0",
+		"lighthouse": "^10.3.0",
+		"patch-package": "^7.0.0",
+		"playwright": "^1.35.1",
+		"tablemark": "^3.0.0"
+	},
+	"scripts": {
+		"postinstall": "patch-package",
+		"lint": "wp-scripts lint-js",
+		"format": "wp-scripts format",
+		"test:performance": "node_modules/@playwright/test/cli.js test --config tests/performance/playwright.config.ts",
+		"wp-env": "wp-env"
+	}
+}
