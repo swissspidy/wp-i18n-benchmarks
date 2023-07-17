@@ -1,7 +1,6 @@
 {
 	"core": null,
 	"plugins": [
-		".",
 		"https://downloads.wordpress.org/plugin/contact-form-7.zip",
 		"https://downloads.wordpress.org/plugin/dynamo.zip",
 		"https://downloads.wordpress.org/plugin/native-gettext.zip",
@@ -12,7 +11,8 @@
 		"https://downloads.wordpress.org/plugin/wordpress-seo.zip",
 		"https://downloads.wordpress.org/plugin/wp-performance-pack.zip",
 		"https://downloads.wordpress.org/plugin/wpforms-lite.zip",
-		"wearerequired/translations-cache"
+		"wearerequired/translations-cache",
+		"swissspidy/ginger-mo"
 	],
 	"themes": [
 		"https://downloads.wordpress.org/theme/twentytwentyone.zip",
