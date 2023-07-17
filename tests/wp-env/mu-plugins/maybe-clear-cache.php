@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Maybe clear caches
- * Description: Allows clearing caches (OPCache, object cache, APCU) visiting example.com?action=clear-XYZ
+ * Description: Allows clearing caches (OPCache, object cache, APCu) visiting example.com?action=clear-XYZ
  * Version: 0.1.0
  * Author: Pascal Birchler
  * Author URI: https://pascalbirchler.com
