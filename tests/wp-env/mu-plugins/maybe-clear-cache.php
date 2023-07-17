@@ -23,7 +23,7 @@ add_action(
 					die;
 
 				case 'object-cache':
-					if ( function_exists( 'opcache_reset' ) && opcache_reset() ) {
+					if ( wp_cache_flush() ) {
 						status_header( 202 );
 					} else {
 						status_header( 400 );
