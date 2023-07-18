@@ -6,6 +6,9 @@ on:
             - main
     pull_request:
 
+env:
+  WP_ARTIFACTS_PATH: ${{ github.workspace }}/artifacts
+
 jobs:
     lint-js:
         name: JS Lints
