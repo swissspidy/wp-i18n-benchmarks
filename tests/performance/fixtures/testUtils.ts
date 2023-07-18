@@ -58,7 +58,7 @@ class TestUtils {
 			language: '',
 		} );
 
-		await this.requestUtils.deactivatePlugin( 'wordpress-importer' );
+		await this.requestUtils.deactivatePlugin( 'word-press-importer' );
 		await this.requestUtils.deactivatePlugin( 'dyna-mo' );
 		await this.requestUtils.deactivatePlugin( 'ginger-mo' );
 		await this.requestUtils.deactivatePlugin( 'ginger-mo-prefer-json' );
