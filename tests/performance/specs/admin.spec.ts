@@ -2,7 +2,7 @@ import { test } from '../fixtures';
 import { testCases, iterate } from '../utils';
 import { Scenario } from '../utils/types';
 
-test.describe( 'Server Timing - WordPress Admin', () => {
+test.describe( 'WordPress Admin', () => {
 	for ( const testCase of testCases ) {
 		const { locale, scenario, objectCache } = testCase;
 

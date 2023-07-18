@@ -2,7 +2,7 @@ import { test } from '../fixtures';
 import { testCases, iterate } from '../utils';
 import { Scenario } from '../utils/types';
 
-test.describe( 'Server Timing - Twenty Twenty-One', () => {
+test.describe( 'Twenty Twenty-One', () => {
 	test.beforeAll( async ( { requestUtils } ) => {
 		await requestUtils.activateTheme( 'twentytwentyone' );
 	} );
