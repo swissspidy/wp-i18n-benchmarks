@@ -69,12 +69,16 @@ class PerformanceReporter implements Reporter {
 			} );
 		}
 
+		const fileName = this.shard
+				? `performance-results-${ this.shard.current }-${ this.shard.total }.json`
+				: 'performance-results.json';
+
+		console.log( `\nResults saved to ${ fileName }` );
+
 		writeFileSync(
 			join(
 				process.env.WP_ARTIFACTS_PATH as string,
-				this.shard
-					? `performance-results-${ this.shard.current }-${ this.shard.total }.json`
-					: 'performance-results.json'
+				fileName
 			),
 			JSON.stringify( summary, null, 2 )
 		);
