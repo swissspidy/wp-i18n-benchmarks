@@ -1,7 +1,4 @@
-import {
-	RequestUtils,
-	test as base,
-} from '@wordpress/e2e-test-utils-playwright';
+import { test as base } from '@wordpress/e2e-test-utils-playwright';
 import { type Browser, chromium } from 'playwright';
 import getPort from 'get-port';
 
@@ -19,26 +16,11 @@ type PerformanceFixtures = {
 export const test = base.extend<
 	PerformanceFixtures,
 	{
-		requestUtils: RequestUtils;
 		testUtils: TestUtils;
 		port: number;
 		browser: Browser;
 	}
 >( {
-	// Override requestUtils from @wordpress/e2e-test-utils-playwright
-	// to avoid trashing all posts initially and looking for GB-specific plugins.
-	// @ts-ignore -- TODO: Fix types.
-	requestUtils: [
-		async ( {}, use, workerInfo ) => {
-			const requestUtils = await RequestUtils.setup( {
-				baseURL: workerInfo.project.use.baseURL,
-				storageStatePath: process.env.STORAGE_STATE_PATH,
-			} );
-
-			await use( requestUtils );
-		},
-		{ scope: 'worker', auto: true },
-	],
 	wpPerformancePack: async ( { admin, page, requestUtils }, use ) => {
 		await use( new WpPerformancePack( { admin, page, requestUtils } ) );
 	},
@@ -49,6 +31,7 @@ export const test = base.extend<
 		},
 		{ scope: 'worker' },
 	],
+	// TODO: Only launch browser & set port when metrics is actually being used.
 	browser: [
 		async ( { port }, use ) => {
 			const browser = await chromium.launch( {
