@@ -71,8 +71,8 @@ export const test = base.extend<
 		},
 		{ scope: 'worker', auto: true },
 	],
-	testPage: async ( { page, admin, requestUtils }, use ) => {
-		await use( new TestPage( { page, admin, requestUtils } ) );
+	testPage: async ( { page, admin }, use ) => {
+		await use( new TestPage( { page, admin } ) );
 	},
 } );
 
