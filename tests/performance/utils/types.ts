@@ -7,6 +7,7 @@ export enum Scenario {
 	ObjectCache = 'Cache in object cache',
 	Apcu = 'Cache in APCu',
 	NativeGettext = 'Native Gettext',
+	Pomodoro = 'Pomodoro',
 }
 
 export type TestCase = {
