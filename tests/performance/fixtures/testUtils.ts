@@ -33,6 +33,12 @@ class TestUtils {
 			await this.requestUtils.activatePlugin( 'translations-cache' );
 		}
 
+		if ( scenario === Scenario.Transients ) {
+			await this.requestUtils.activatePlugin(
+				'a-faster-load-textdomain'
+			);
+		}
+
 		if ( scenario === Scenario.Pomodoro ) {
 			await this.requestUtils.activatePlugin(
 				'pom-odoro-translation-cache'
@@ -73,6 +79,7 @@ class TestUtils {
 		await this.requestUtils.deactivatePlugin( 'native-gettext' );
 		await this.requestUtils.deactivatePlugin( 'wp-performance-pack' );
 		await this.requestUtils.deactivatePlugin( 'translations-cache' );
+		await this.requestUtils.deactivatePlugin( 'a-faster-load-textdomain' );
 		await this.requestUtils.deactivatePlugin(
 			'pom-odoro-translation-cache'
 		);

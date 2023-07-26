@@ -8,6 +8,7 @@ export enum Scenario {
 	Apcu = 'Cache in APCu',
 	NativeGettext = 'Native Gettext',
 	Pomodoro = 'Pomodoro',
+	Transients = 'Cache in transients',
 }
 
 export type TestCase = {

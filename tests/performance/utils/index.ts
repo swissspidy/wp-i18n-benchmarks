@@ -10,6 +10,7 @@ export const testCases: TestCase[] = [
 	{ locale: 'de_DE', scenario: Scenario.Dynamo, objectCache: false },
 	{ locale: 'de_DE', scenario: Scenario.Apcu, objectCache: false },
 	{ locale: 'de_DE', scenario: Scenario.Pomodoro, objectCache: false },
+	{ locale: 'de_DE', scenario: Scenario.Transients, objectCache: false },
 	{ locale: 'en_US', scenario: Scenario.Default, objectCache: true },
 	{ locale: 'de_DE', scenario: Scenario.Default, objectCache: true },
 	{ locale: 'de_DE', scenario: Scenario.GingerMo, objectCache: true },
@@ -19,6 +20,7 @@ export const testCases: TestCase[] = [
 	{ locale: 'de_DE', scenario: Scenario.Dynamo, objectCache: true },
 	{ locale: 'de_DE', scenario: Scenario.Apcu, objectCache: true },
 	{ locale: 'de_DE', scenario: Scenario.Pomodoro, objectCache: true },
+	{ locale: 'de_DE', scenario: Scenario.Transients, objectCache: true },
 	{ locale: 'de_DE', scenario: Scenario.ObjectCache, objectCache: true },
 ];
 
