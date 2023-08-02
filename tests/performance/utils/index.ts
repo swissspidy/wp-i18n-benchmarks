@@ -9,6 +9,13 @@ export const testCases: TestCase[] = [
 	{ locale: 'de_DE', scenario: Scenario.NativeGettext, objectCache: false },
 	{ locale: 'de_DE', scenario: Scenario.Dynamo, objectCache: false },
 	{ locale: 'de_DE', scenario: Scenario.Apcu, objectCache: false },
+	{ locale: 'ja', scenario: Scenario.Default, objectCache: false },
+	{ locale: 'ja', scenario: Scenario.GingerMo, objectCache: false },
+	{ locale: 'ja', scenario: Scenario.GingerMoPhp, objectCache: false },
+	{ locale: 'ja', scenario: Scenario.GingerMoJson, objectCache: false },
+	{ locale: 'ja', scenario: Scenario.NativeGettext, objectCache: false },
+	{ locale: 'ja', scenario: Scenario.Dynamo, objectCache: false },
+	{ locale: 'ja', scenario: Scenario.Apcu, objectCache: false },
 	{ locale: 'en_US', scenario: Scenario.Default, objectCache: true },
 	{ locale: 'de_DE', scenario: Scenario.Default, objectCache: true },
 	{ locale: 'de_DE', scenario: Scenario.GingerMo, objectCache: true },
@@ -18,6 +25,14 @@ export const testCases: TestCase[] = [
 	{ locale: 'de_DE', scenario: Scenario.Dynamo, objectCache: true },
 	{ locale: 'de_DE', scenario: Scenario.Apcu, objectCache: true },
 	{ locale: 'de_DE', scenario: Scenario.ObjectCache, objectCache: true },
+	{ locale: 'ja', scenario: Scenario.Default, objectCache: true },
+	{ locale: 'ja', scenario: Scenario.GingerMo, objectCache: true },
+	{ locale: 'ja', scenario: Scenario.GingerMoPhp, objectCache: true },
+	{ locale: 'ja', scenario: Scenario.GingerMoJson, objectCache: true },
+	{ locale: 'ja', scenario: Scenario.NativeGettext, objectCache: true },
+	{ locale: 'ja', scenario: Scenario.Dynamo, objectCache: true },
+	{ locale: 'ja', scenario: Scenario.Apcu, objectCache: true },
+	{ locale: 'ja', scenario: Scenario.ObjectCache, objectCache: true },
 ];
 
 type IterationCallback = () => Promise< Record< string, number > >;
