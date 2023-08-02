@@ -1,23 +1,13 @@
-import { Admin, RequestUtils } from '@wordpress/e2e-test-utils-playwright';
+import { Admin } from '@wordpress/e2e-test-utils-playwright';
 import type { Page } from '@playwright/test';
 
 class TestPage {
 	page: Page;
 	admin: Admin;
-	requestUtils: RequestUtils;
 
-	constructor( {
-		page,
-		admin,
-		requestUtils,
-	}: {
-		page: Page;
-		admin: Admin;
-		requestUtils: RequestUtils;
-	} ) {
+	constructor( { page, admin }: { page: Page; admin: Admin } ) {
 		this.page = page;
 		this.admin = admin;
-		this.requestUtils = requestUtils;
 	}
 
 	async visitHomepage() {
