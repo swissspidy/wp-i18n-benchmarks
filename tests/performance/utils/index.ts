@@ -30,7 +30,6 @@ export const testCases: TestCase[] = [
 	{ locale: 'de_DE', scenario: Scenario.Apcu, objectCache: true },
 	{ locale: 'de_DE', scenario: Scenario.Pomodoro, objectCache: true },
 	{ locale: 'de_DE', scenario: Scenario.Transients, objectCache: true },
-	{ locale: 'de_DE', scenario: Scenario.ObjectCache, objectCache: true },
 	{ locale: 'ja', scenario: Scenario.Default, objectCache: true },
 	{ locale: 'ja', scenario: Scenario.GingerMo, objectCache: true },
 	{ locale: 'ja', scenario: Scenario.GingerMoPhp, objectCache: true },
@@ -40,7 +39,6 @@ export const testCases: TestCase[] = [
 	{ locale: 'ja', scenario: Scenario.Apcu, objectCache: true },
 	{ locale: 'ja', scenario: Scenario.Pomodoro, objectCache: true },
 	{ locale: 'ja', scenario: Scenario.Transients, objectCache: true },
-	{ locale: 'ja', scenario: Scenario.ObjectCache, objectCache: true },
 ];
 
 type IterationCallback = () => Promise< Record< string, number > >;
