@@ -5,10 +5,8 @@ import getPort from 'get-port';
 import WpPerformancePack from './wpPerformancePack';
 import Metrics from './metrics';
 import TestUtils from './testUtils';
-import TestPage from './testPage';
 
 type PerformanceFixtures = {
-	testPage: TestPage;
 	metrics: Metrics;
 	wpPerformancePack: WpPerformancePack;
 };
@@ -54,9 +52,6 @@ export const test = base.extend<
 		},
 		{ scope: 'worker', auto: true },
 	],
-	testPage: async ( { page, admin }, use ) => {
-		await use( new TestPage( { page, admin } ) );
-	},
 } );
 
 export { expect } from '@wordpress/e2e-test-utils-playwright';
