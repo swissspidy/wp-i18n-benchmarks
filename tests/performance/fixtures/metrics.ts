@@ -33,14 +33,14 @@ class Metrics {
 	 * Returns time to first byte (TTFB) from PerformanceObserver.
 	 */
 	async getTimeToFirstByte() {
-		return this.page.evaluate< number >(
-			() =>
-				(
-					performance.getEntriesByType(
-						'navigation'
-					) as PerformanceNavigationTiming[]
-				 )[ 0 ].responseStart
-		);
+		return this.page.evaluate< number >( () => {
+			const { responseStart, startTime } = (
+				performance.getEntriesByType(
+					'navigation'
+				) as PerformanceNavigationTiming[]
+			 )[ 0 ];
+			return responseStart - startTime;
+		} );
 	}
 
 	async getLighthouseReport() {
