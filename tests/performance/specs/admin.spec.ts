@@ -19,6 +19,7 @@ test.describe( 'WordPress Admin', () => {
 
 			test( 'Server Timing Metrics', async ( {
 				admin,
+				baseURL,
 				wpPerformancePack,
 				metrics,
 			}, testInfo ) => {
@@ -41,9 +42,10 @@ test.describe( 'WordPress Admin', () => {
 						};
 					} ) ),
 					...( await iterate( async () => {
-						await admin.visitAdminPage( 'index.php' );
 						return {
-							...( await metrics.getLighthouseReport() ),
+							...( await metrics.getLighthouseReport(
+								`${ baseURL }/wp-admin/index.php`
+							) ),
 						};
 					}, Number( process.env.LIGHTHOUSE_RUNS ) ) ),
 				};

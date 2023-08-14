@@ -23,6 +23,7 @@ test.describe( 'Twenty Twenty-One', () => {
 
 			test( 'Server Timing Metrics', async ( {
 				page,
+				baseURL,
 				wpPerformancePack,
 				metrics,
 			}, testInfo ) => {
@@ -45,9 +46,8 @@ test.describe( 'Twenty Twenty-One', () => {
 						};
 					} ) ),
 					...( await iterate( async () => {
-						await page.goto( '/' );
 						return {
-							...( await metrics.getLighthouseReport() ),
+							...( await metrics.getLighthouseReport( baseURL ) ),
 						};
 					}, Number( process.env.LIGHTHOUSE_RUNS ) ) ),
 				};

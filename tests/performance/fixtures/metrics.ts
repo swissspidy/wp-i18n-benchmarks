@@ -43,9 +43,9 @@ class Metrics {
 		} );
 	}
 
-	async getLighthouseReport() {
+	async getLighthouseReport( url?: string ) {
 		const result = await lighthouse(
-			this.page.url(),
+			url || this.page.url(),
 			{ port: this.port },
 			undefined
 		);
