@@ -14,11 +14,11 @@ class TestUtils {
 		} );
 
 		if ( objectCache ) {
-			await this.requestUtils.activatePlugin( 'sq-lite-object-cache' );
+			await this.requestUtils.activatePlugin( 'sqlite-object-cache' );
 		}
 
 		if ( scenario === Scenario.Dynamo ) {
-			await this.requestUtils.activatePlugin( 'dyna-mo' );
+			await this.requestUtils.activatePlugin( 'dynamo' );
 		}
 
 		if ( scenario === Scenario.NativeGettext ) {
@@ -41,7 +41,7 @@ class TestUtils {
 
 		if ( scenario === Scenario.Pomodoro ) {
 			await this.requestUtils.activatePlugin(
-				'pom-odoro-translation-cache'
+				'pomodoro-translation-cache'
 			);
 		}
 
