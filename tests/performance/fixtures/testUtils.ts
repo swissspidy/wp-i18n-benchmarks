@@ -50,7 +50,7 @@ class TestUtils {
 			scenario === Scenario.GingerMoPhp ||
 			scenario === Scenario.GingerMoJson
 		) {
-			await this.requestUtils.activatePlugin( 'ginger-mo' );
+			await this.requestUtils.activatePlugin( 'performant-translations' );
 		}
 
 		if ( scenario === Scenario.GingerMo ) {
@@ -72,7 +72,7 @@ class TestUtils {
 
 		await this.requestUtils.deactivatePlugin( 'wordpress-importer' );
 		await this.requestUtils.deactivatePlugin( 'dynamo' );
-		await this.requestUtils.deactivatePlugin( 'ginger-mo' );
+		await this.requestUtils.deactivatePlugin( 'performant-translations' );
 		await this.requestUtils.deactivatePlugin( 'ginger-mo-prefer-json' );
 		await this.requestUtils.deactivatePlugin( 'ginger-mo-prefer-mo' );
 		await this.requestUtils.deactivatePlugin( 'sqlite-object-cache' );
