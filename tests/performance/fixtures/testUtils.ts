@@ -14,11 +14,11 @@ class TestUtils {
 		} );
 
 		if ( objectCache ) {
-			await this.requestUtils.activatePlugin( 'sq-lite-object-cache' );
+			await this.requestUtils.activatePlugin( 'sqlite-object-cache' );
 		}
 
 		if ( scenario === Scenario.Dynamo ) {
-			await this.requestUtils.activatePlugin( 'dyna-mo' );
+			await this.requestUtils.activatePlugin( 'dynamo' );
 		}
 
 		if ( scenario === Scenario.NativeGettext ) {
@@ -41,7 +41,7 @@ class TestUtils {
 
 		if ( scenario === Scenario.Pomodoro ) {
 			await this.requestUtils.activatePlugin(
-				'pom-odoro-translation-cache'
+				'pomodoro-translation-cache'
 			);
 		}
 
@@ -50,7 +50,7 @@ class TestUtils {
 			scenario === Scenario.GingerMoPhp ||
 			scenario === Scenario.GingerMoJson
 		) {
-			await this.requestUtils.activatePlugin( 'ginger-mo' );
+			await this.requestUtils.activatePlugin( 'performant-translations' );
 		}
 
 		if ( scenario === Scenario.GingerMo ) {
@@ -70,18 +70,18 @@ class TestUtils {
 			language: '',
 		} );
 
-		await this.requestUtils.deactivatePlugin( 'word-press-importer' );
-		await this.requestUtils.deactivatePlugin( 'dyna-mo' );
-		await this.requestUtils.deactivatePlugin( 'ginger-mo' );
+		await this.requestUtils.deactivatePlugin( 'wordpress-importer' );
+		await this.requestUtils.deactivatePlugin( 'dynamo' );
+		await this.requestUtils.deactivatePlugin( 'performant-translations' );
 		await this.requestUtils.deactivatePlugin( 'ginger-mo-prefer-json' );
 		await this.requestUtils.deactivatePlugin( 'ginger-mo-prefer-mo' );
-		await this.requestUtils.deactivatePlugin( 'sq-lite-object-cache' );
+		await this.requestUtils.deactivatePlugin( 'sqlite-object-cache' );
 		await this.requestUtils.deactivatePlugin( 'native-gettext' );
 		await this.requestUtils.deactivatePlugin( 'wp-performance-pack' );
 		await this.requestUtils.deactivatePlugin( 'translations-cache' );
 		await this.requestUtils.deactivatePlugin( 'a-faster-load-textdomain' );
 		await this.requestUtils.deactivatePlugin(
-			'pom-odoro-translation-cache'
+			'pomodoro-translation-cache'
 		);
 
 		await this.clearCaches();

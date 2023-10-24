@@ -17,7 +17,7 @@ test.describe( 'WordPress Admin', () => {
 			} );
 
 			test( 'Server Timing Metrics', async ( {
-				testPage,
+				admin,
 				metrics,
 			}, testInfo ) => {
 				const results = {
@@ -25,7 +25,7 @@ test.describe( 'WordPress Admin', () => {
 					Scenario: scenario,
 					'Object Cache': objectCache,
 					...( await iterate( async () => {
-						await testPage.visitDashboard();
+						await admin.visitAdminPage( 'index.php' );
 						return {
 							...( await metrics.getServerTiming( [
 								'wp-memory-usage',
@@ -35,9 +35,10 @@ test.describe( 'WordPress Admin', () => {
 						};
 					} ) ),
 					...( await iterate( async () => {
-						await testPage.visitDashboard();
 						return {
-							...( await metrics.getLighthouseReport() ),
+							...( await metrics.getLighthouseReport(
+								`${ baseURL }/wp-admin/index.php`
+							) ),
 						};
 					}, Number( process.env.LIGHTHOUSE_RUNS ) ) ),
 				};

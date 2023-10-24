@@ -21,7 +21,7 @@ test.describe( 'Twenty Twenty-One', () => {
 			} );
 
 			test( 'Server Timing Metrics', async ( {
-				testPage,
+				page,
 				metrics,
 			}, testInfo ) => {
 				const results = {
@@ -29,7 +29,7 @@ test.describe( 'Twenty Twenty-One', () => {
 					Scenario: scenario,
 					'Object Cache': objectCache,
 					...( await iterate( async () => {
-						await testPage.visitHomepage();
+						await page.goto( '/' );
 						return {
 							...( await metrics.getServerTiming( [
 								'wp-memory-usage',
@@ -39,9 +39,8 @@ test.describe( 'Twenty Twenty-One', () => {
 						};
 					} ) ),
 					...( await iterate( async () => {
-						await testPage.visitHomepage();
 						return {
-							...( await metrics.getLighthouseReport() ),
+							...( await metrics.getLighthouseReport( baseURL ) ),
 						};
 					}, Number( process.env.LIGHTHOUSE_RUNS ) ) ),
 				};

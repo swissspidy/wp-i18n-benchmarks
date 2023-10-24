@@ -1,13 +1,11 @@
 import { test as base } from '@wordpress/e2e-test-utils-playwright';
-import { type Browser, chromium } from 'playwright';
+import { type Browser, chromium } from '@playwright/test';
 import getPort from 'get-port';
 
 import Metrics from './metrics';
 import TestUtils from './testUtils';
-import TestPage from './testPage';
 
 type PerformanceFixtures = {
-	testPage: TestPage;
 	metrics: Metrics;
 };
 
@@ -49,9 +47,6 @@ export const test = base.extend<
 		},
 		{ scope: 'worker', auto: true },
 	],
-	testPage: async ( { page, admin }, use ) => {
-		await use( new TestPage( { page, admin } ) );
-	},
 } );
 
 export { expect } from '@wordpress/e2e-test-utils-playwright';

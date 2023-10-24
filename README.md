@@ -4,9 +4,9 @@ Benchmarks comparing various WordPress i18n performance enhancements.
 
 ## Latest Results
 
-Latest tests show that [Ginger MO](https://github.com/swissspidy/ginger-mo) is much faster at loading translations than the built-in localization system in WordPress core.
+Latest tests show that [Performant Translations (Ginger MO)](https://github.com/swissspidy/performant-translations) is much faster at loading translations than the built-in localization system in WordPress core.
 
-The following numbers are for a site running 6.3 Beta with multiple active plugins.
+The following numbers are for a site running 6.3 with multiple active plugins.
 
 **Twenty Twenty-Three**
 
