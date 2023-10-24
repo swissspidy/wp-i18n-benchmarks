@@ -2,7 +2,10 @@ import lighthouse from 'lighthouse';
 import type { Page } from '@playwright/test';
 
 class Metrics {
-	constructor( public readonly page: Page, public readonly port: number ) {
+	constructor(
+		public readonly page: Page,
+		public readonly port: number
+	) {
 		this.page = page;
 		this.port = port;
 	}
@@ -19,12 +22,15 @@ class Metrics {
 					performance.getEntriesByType(
 						'navigation'
 					) as PerformanceNavigationTiming[]
-				 )[ 0 ].serverTiming.reduce( ( acc, entry ) => {
-					if ( f.length === 0 || f.includes( entry.name ) ) {
-						acc[ entry.name ] = entry.duration;
-					}
-					return acc;
-				}, {} as Record< string, number > ),
+				 )[ 0 ].serverTiming.reduce(
+					( acc, entry ) => {
+						if ( f.length === 0 || f.includes( entry.name ) ) {
+							acc[ entry.name ] = entry.duration;
+						}
+						return acc;
+					},
+					{} as Record< string, number >
+				),
 			fields
 		);
 	}
