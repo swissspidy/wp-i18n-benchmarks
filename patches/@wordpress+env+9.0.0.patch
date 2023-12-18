@@ -1,11 +1,11 @@
 diff --git a/node_modules/@wordpress/env/lib/init-config.js b/node_modules/@wordpress/env/lib/init-config.js
-index efde002..70401fc 100644
+index 318bcae..e19b174 100644
 --- a/node_modules/@wordpress/env/lib/init-config.js
 +++ b/node_modules/@wordpress/env/lib/init-config.js
 @@ -201,6 +201,14 @@ RUN apt-get -qy update
  # Install some basic PHP dependencies.
  RUN apt-get -qy install $PHPIZE_DEPS && touch /usr/local/etc/php/php.ini
-
+ 
 +# Install the PHP extensions we need
 +RUN apt-get -qy install gettext
 +RUN docker-php-ext-install gettext
@@ -16,11 +16,11 @@ index efde002..70401fc 100644
 +
  # Install git
  RUN apt-get -qy install git
-
+ 
 @@ -217,6 +225,14 @@ RUN apk update
  # Install some basic PHP dependencies.
  RUN apk --no-cache add $PHPIZE_DEPS && touch /usr/local/etc/php/php.ini
-
+ 
 +# Install the PHP extensions we need
 +RUN apk --no-cache add gettext-dev
 +RUN docker-php-ext-install gettext
