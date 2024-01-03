@@ -1,6 +1,5 @@
 import { test } from '../fixtures';
 import { testCases, iterate } from '../utils';
-import { Scenario } from '../utils/types';
 
 test.describe( 'WordPress Admin', () => {
 	for ( const testCase of testCases ) {
@@ -19,14 +18,8 @@ test.describe( 'WordPress Admin', () => {
 
 			test( 'Server Timing Metrics', async ( {
 				admin,
-				baseURL,
-				wpPerformancePack,
 				metrics,
 			}, testInfo ) => {
-				if ( scenario === Scenario.ObjectCache ) {
-					await wpPerformancePack.enableL10n();
-				}
-
 				const results = {
 					Locale: locale,
 					Scenario: scenario,

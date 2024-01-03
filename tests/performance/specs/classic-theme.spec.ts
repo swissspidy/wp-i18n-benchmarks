@@ -1,6 +1,5 @@
 import { test } from '../fixtures';
 import { testCases, iterate } from '../utils';
-import { Scenario } from '../utils/types';
 
 test.describe( 'Twenty Twenty-One', () => {
 	test.beforeAll( async ( { requestUtils } ) => {
@@ -23,14 +22,8 @@ test.describe( 'Twenty Twenty-One', () => {
 
 			test( 'Server Timing Metrics', async ( {
 				page,
-				baseURL,
-				wpPerformancePack,
 				metrics,
 			}, testInfo ) => {
-				if ( scenario === Scenario.ObjectCache ) {
-					await wpPerformancePack.enableL10n();
-				}
-
 				const results = {
 					Locale: locale,
 					Scenario: scenario,

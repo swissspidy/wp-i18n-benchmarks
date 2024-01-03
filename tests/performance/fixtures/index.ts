@@ -2,13 +2,11 @@ import { test as base } from '@wordpress/e2e-test-utils-playwright';
 import { type Browser, chromium } from '@playwright/test';
 import getPort from 'get-port';
 
-import WpPerformancePack from './wpPerformancePack';
 import Metrics from './metrics';
 import TestUtils from './testUtils';
 
 type PerformanceFixtures = {
 	metrics: Metrics;
-	wpPerformancePack: WpPerformancePack;
 };
 
 export const test = base.extend<
@@ -19,9 +17,6 @@ export const test = base.extend<
 		browser: Browser;
 	}
 >( {
-	wpPerformancePack: async ( { admin, page, requestUtils }, use ) => {
-		await use( new WpPerformancePack( { admin, page, requestUtils } ) );
-	},
 	port: [
 		async ( {}, use ) => {
 			const port = await getPort();
